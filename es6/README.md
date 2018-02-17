@@ -24,11 +24,9 @@ console.log('Weeks:', JSON.stringify(calendar.years['2014'].months[4].calendar, 
 ``` bash
 npm run test
 ```
-![Image of Tests](https://raw.githubusercontent.com/normancarcamo/express-react-middleware/master/tests_preview.png)
-<br/>
 
 ## Examples:
-See [examples folder](https://github.com/normancarcamo/express-react-middleware/tree/master/examples)
+See [examples folder](https://github.com/normancarcamo/calendar-script/tree/master/es6/examples)
 
 ## Maintainers:
 
