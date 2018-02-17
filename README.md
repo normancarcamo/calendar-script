@@ -1,3 +1,18 @@
+## Installation
+
+#### Browser:
+```html
+<html>
+  <head>
+    <!-- ... -->
+  </head>
+  <body>
+    <!-- ... -->
+    <script>https://cdn.rawgit.com/normancarcamo/calendar-script/aeb0d05c/dist/browser/calendar.min.js</script>
+  </body>
+</html>
+```
+
 ## Example of usage:
 
 ```javascript
@@ -15,8 +30,6 @@ calendar.filter({ from: 2012 });
 
 console.log('Weeks:', JSON.stringify(calendar.years['2014'].months[4].calendar, null, 2));
 ```
-
-## Installation
 
 ## Tests:
 ``` bash
