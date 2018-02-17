@@ -30,7 +30,7 @@ calendar.filter({ from: 2012 });
 
 console.log('Weeks:', JSON.stringify(calendar.years['2014'].months[4].calendar, null, 2));
 ```
-![Image of usage](https://github.com/normancarcamo/calendar-script/blob/master/examples/screenshot.png)
+![Image of usage](https://github.com/normancarcamo/calendar-script/blob/master/examples/_screenshot_.png)
 <br/>
 
 ## Tests:
