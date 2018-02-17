@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- ... -->
-    <script>https://cdn.rawgit.com/normancarcamo/calendar-script/aeb0d05c/dist/browser/calendar.min.js</script>
+    <script src="https://cdn.rawgit.com/normancarcamo/calendar-script/aeb0d05c/dist/browser/calendar.min.js"></script>
   </body>
 </html>
 ```
