@@ -24,7 +24,7 @@ npm run test
 ```
 
 ## Examples:
-See [examples folder](https://github.com/normancarcamo/calendar-script/tree/master/es6/examples)
+See [examples folder](https://github.com/normancarcamo/calendar-script/tree/master/examples)
 
 ## Maintainers:
 
