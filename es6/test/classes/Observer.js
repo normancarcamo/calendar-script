@@ -3,15 +3,15 @@ import Observer from '../../src/node/classes/Observer'
 
 export default function() {
   describe('Observer:', () => {
-    var observer;
+    let observer;
 
     before(() => {
       observer = new Observer();
-    })
+    });
 
     context('#constructor()', () => {
       it('should be able to create a new instance', () => {
-        expect(observer).to.be.an.instanceof(Observer)
+        expect(observer).to.be.an.instanceof(Observer);
       });
       it('should have a property called "actions"', () => {
         expect(observer)
@@ -62,27 +62,27 @@ export default function() {
         observer.on('add', data => {});
         expect(observer.off('add', data => {})).to.be.instanceof(Observer);
       });
-    })
+    });
 
     context('#offAll([callback: function])', () => {
       it('should be a function', () => {
-        expect(observer).to.have.a.property('offAll').that.is.a('function')
-      })
+        expect(observer).to.have.a.property('offAll').that.is.a('function');
+      });
       it('should remove all the actions registered in the observer', () => {
-        var invoked = false
+        let called = false;
 
-        observer.on('a', data => {})
-        observer.on('b', data => {})
-        observer.on('c', data => {})
+        observer.on('a', data => {});
+        observer.on('b', data => {});
+        observer.on('c', data => {});
 
-        observer.offAll(() => { invoked = true })
+        observer.offAll(() => { called = true });
 
-        expect(invoked).to.be.true
-      })
+        expect(called).to.be.true;
+      });
       it('should return the observer instance', () => {
-        expect(observer.offAll()).to.be.instanceof(Observer)
-      })
-    })
+        expect(observer.offAll()).to.be.instanceof(Observer);
+      });
+    });
 
     context('#emit(name: string, data: any)', () => {
       it('should be a function', () => {
@@ -94,9 +94,11 @@ export default function() {
         );
       });
       it('should invoke the action', () => {
-        var called = false;
+        let called = false;
+
         observer.on('add', (data) => { called = true });
         observer.emit('add');
+
         expect(called).to.be.true;
       });
       it('should return the observer instance', () => {
@@ -106,10 +108,10 @@ export default function() {
 
     context('#emitAll([callback: function])', () => {
       it('should be a function', () => {
-        expect(observer).to.have.a.property('emitAll').that.is.a('function')
-      })
+        expect(observer).to.have.a.property('emitAll').that.is.a('function');
+      });
       it('should invoke all the actions registered in the observer', () => {
-        var a = false, b = false, c = false, d = false
+        let a = false, b = false, c = false, d = false;
 
         observer.on('a', data => { a = true })
         observer.on('b', data => { b = true })
@@ -123,8 +125,8 @@ export default function() {
         expect(d).to.be.true
       })
       it('should return the observer instance\n', () => {
-        expect(observer.emitAll()).to.be.instanceof(Observer)
-      })
+        expect(observer.emitAll()).to.be.instanceof(Observer);
+      });
     })
   });
 };

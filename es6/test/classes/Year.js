@@ -36,64 +36,45 @@ export default function() {
     });
 
     context('#addMonth(month: Month[, action: string, callback: function])', () => {
+      let month, day, year, called;
+
+      beforeEach(() => {
+        year = new Year(2010);
+        month = new Month(1, 'January');
+        day = new Day(1, "Monday");
+        month.addDay(day);
+        called = false;
+      });
+
       it('should be a function', () => {
-        let year = new Year(2010);
         expect(year).to.have.a.property('addMonth').that.is.a('function');
       });
       it('should throw error when no parameters are found', () => {
-        let year = new Year(2010);
         expect(() => year.addMonth()).to.throw('Invalid arguments');
       });
       it('should throw error the parameter month is not valid', () => {
-        let year = new Year(2010);
         expect(() => year.addMonth(null)).to.throw('Invalid month');
       });
       it('should add a valid month to the months list', () => {
-        let year = new Year(2010);
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        month.addDay(day);
         year.addMonth(month);
         expect(year.months.length).to.equal(1);
       });
       it('should throw error when the action parameter is invalid', () => {
-        let year = new Year(2010);
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        month.addDay(day);
         expect(() => year.addMonth(month, 49)).to.Throw('Invalid action');
       });
       it('should emit the action when passing a valid action name', () => {
-        let year = new Year(2010);
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        let called = false;
         year.on('add', function(day) { called = true; });
-        month.addDay(day);
         year.addMonth(month, 'add');
         expect(called).to.be.true;
       });
       it('should throw error when the callback is not a function', () => {
-        let year = new Year(2010);
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        month.addDay(day);
         expect(() => year.addMonth(month, null, 78)).to.Throw('Invalid callback');
       });
       it('should not throw error when the callback is a valid function', () => {
-        let year = new Year(2010);
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        let called = false;
-        month.addDay(day);
         year.addMonth(month, null, () => { called = true; });
         expect(called).to.be.true;
       });
       it('should return the year instance\n', () => {
-        let year = new Year(2010);
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        month.addDay(day);
         expect(year.addMonth(month)).to.be.instanceof(Year);
       });
     });

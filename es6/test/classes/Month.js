@@ -46,51 +46,43 @@ export default function() {
     });
 
     context('#addDay(day: Day[, action: string, callback: function])', () => {
+      let month, day, called;
+
+      beforeEach(() => {
+        month = new Month(1, 'January');
+        day = new Day(1, "Monday");
+        called = false;
+      });
+
       it('should be a function', () => {
-        let month = new Month(1, 'January');
         expect(month).to.have.a.property('addDay').that.is.a('function');
       });
       it('should throw error when no parameters are found', () => {
-        let month = new Month(1, 'January');
         expect(() => month.addDay()).to.throw('Invalid arguments');
       });
       it('should throw error the day parameter is not valid', () => {
-        let month = new Month(1, 'January');
         expect(() => month.addDay(null)).to.throw('Invalid day');
       });
       it('should add a valid day to the days list', () => {
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
         month.addDay(day);
         expect(month.days.length).to.equal(1);
       });
       it('should throw error when the action parameter is invalid', () => {
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
         expect(() => month.addDay(day, 49)).to.Throw('Invalid action');
       });
       it('should emit the action when passing a valid action name', () => {
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        let invoked = false;
-        month.on('add', function(day) { invoked = true; });
+        month.on('add', function(day) { called = true; });
         month.addDay(day, 'add');
-        expect(invoked).to.be.true;
+        expect(called).to.be.true;
       });
       it('should throw error when the callback is not a function', () => {
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
         expect(() => month.addDay(day, null, 78)).to.Throw('Invalid callback');
       });
       it('should not throw error when the callback is a valid function', () => {
-        let month = new Month(1, 'January');
-        let day = new Day(1, "Monday");
-        let called = false;
         month.addDay(day, null, () => { called = true; });
         expect(called).to.be.true;
       });
       it('should return the month instance\n', () => {
-        let month = new Month(1, 'January');
         expect(month).to.be.instanceof(Observer);
       });
     });
