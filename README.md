@@ -1,4 +1,4 @@
-## Installation
+### Installation
 
 #### Browser:
 ```html
@@ -13,8 +13,7 @@
 </html>
 ```
 
-## Example of usage:
-
+### Examples:
 ```javascript
 const calendar = new Calendar();
 
@@ -33,13 +32,12 @@ console.log(calendar);
 ![Image of usage](https://github.com/normancarcamo/calendar-script/blob/master/examples/_screenshot_.png)
 <br/>
 
-## Tests:
+Check the [examples folder](https://github.com/normancarcamo/calendar-script/tree/master/examples)
+
+### Tests:
 ``` bash
 cd es6 && npm run test
 ```
-
-## Examples:
-See [examples folder](https://github.com/normancarcamo/calendar-script/tree/master/examples)
 
 ## Maintainers:
 
