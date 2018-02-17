@@ -39,6 +39,9 @@ cd es6 && npm run test
 ## Examples:
 See [examples folder](https://github.com/normancarcamo/calendar-script/tree/master/examples)
 
+![Image of usage](https://github.com/normancarcamo/calendar-script/blob/master/examples/screenshot.png)
+<br/>
+
 ## Maintainers:
 
 ![Image of Mantainer](http://s.gravatar.com/avatar/c3d34f6dbeeef3c39942d0ecb1247228?s=80)<br/>
