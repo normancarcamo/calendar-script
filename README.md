@@ -30,6 +30,8 @@ calendar.filter({ from: 2012 });
 
 console.log('Weeks:', JSON.stringify(calendar.years['2014'].months[4].calendar, null, 2));
 ```
+![Image of usage](https://github.com/normancarcamo/calendar-script/blob/master/examples/screenshot.png)
+<br/>
 
 ## Tests:
 ``` bash
@@ -38,9 +40,6 @@ cd es6 && npm run test
 
 ## Examples:
 See [examples folder](https://github.com/normancarcamo/calendar-script/tree/master/examples)
-
-![Image of usage](https://github.com/normancarcamo/calendar-script/blob/master/examples/screenshot.png)
-<br/>
 
 ## Maintainers:
 
