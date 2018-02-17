@@ -20,7 +20,7 @@ console.log('Weeks:', JSON.stringify(calendar.years['2014'].months[4].calendar, 
 
 ## Tests:
 ``` bash
-npm run test
+cd es6 && npm run test
 ```
 
 ## Examples:
