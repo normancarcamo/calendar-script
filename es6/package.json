@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "./node_modules/.bin/babel-node ./src/index.js",
-    "dist": "BABEL_ENV=production && NODE_ENV=production && node_modules/.bin/babel src --out-dir dist --presets env --compact true --no-comments --no-highlight-code -D",
+    "dist": "BABEL_ENV=production && NODE_ENV=production && node_modules/.bin/babel src --out-dir ../dist --presets env --compact true --no-comments --no-highlight-code -D",
     "test": "mocha --require babel-core/register --watch --recursive"
   },
   "devDependencies": {
