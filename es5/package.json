@@ -1,0 +1,9 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./Calendar.js"
+  }
+}
